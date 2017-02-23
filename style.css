@@ -51,46 +51,65 @@ table {
 
 /* reset end */
 
-.container {
+.container_tabs {
     width: 80%;
     margin: 0 auto;
     position: relative;
 }
-.section {
+.container_tabs .section {
     position: absolute;
     overflow: hidden;
     height: 300px;
 }
-.content {
+.container_tabs .content {
     margin: 20px;
+    transition: margin .4s;
+    -webkit-transition: margin .4s;
+    -moz-transition: margin .4s;
 }
-.sectionTabContainer {
+.container_tabs .sectionTabContainer {
     overflow: hidden;
+    margin-top: 20px;
 }
-.sectionTab {
+.container_tabs .sectionTab {
     width: 25%;
     height: 50px;
     position: relative;
     float: left;
-    background-color: #043f04;
+    overflow: hidden;
+    z-index: 2;
 }
-.sectionTab a {
-    
+.container_tabs .sectionTab.animateTab a {
+    background-color: transparent;
+}
+.container_tabs .sectionTab a {
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    background-color: #043f04;
     border: 2px solid white;
     display: block;
     color: white;
     width: 100%;
     height: 100%;
     text-decoration: none;
+    transition: color 1s;
+    -webkit-transition: color 1s;
+    -moz-transition: color 1s;
+    -webkit-border-top-left-radius: 15px;
+    -webkit-border-top-right-radius: 15px;
+    -moz-border-top-left-radius: 15px;
+    -moz-border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
-.sectionTab::first-of-type a {
+.container_tabs .sectionTab:first-of-type a {
     border-left: none;
-    background-color: #dddddd;
 }
-.sectionTab::last-of-type a {
+.container_tabs .sectionTab:last-of-type a {
     border-right: none;
 }
-.sectionTab a h2 {
+.container_tabs .sectionTab a h2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -98,10 +117,11 @@ table {
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
 }
-#section1 {
+.container_tabs #section1 {
     display: block;
 }
-.bgCol {
+.container_tabs .bgCol {
+    background-color: #dddddd;
     top: 0;
     height: 0;
     position: absolute;
@@ -110,34 +130,71 @@ table {
     -webkit-transition: opacity 1s, height .5s, width .5s;
     -moz-transition: opacity 1s, height .5s, width .5s;
 }
-.section .bgCol {
+.container_tabs .section .bgCol {
     width: 25%;
     z-index:-1;
     transition: height .4s, width .4s, left .4s;
     -webkit-transition: height .4s, width .4s, left .4s;
     -moz-transition: height .4s, width .4s, left .4s;
 }
-.animateTab .bgCol {
-    height: 100px;
+.container_tabs .section .contentPlace {
+    width: 0;
+    height: 0;
+    position: absolute;
+    transition: width .4s, height .4s, left .4s;
+    -webkit-transition: width .4s, height .4s, left .4s;
+    -moz-transition: width .4s, height .4s, left .4s;
+    overflow: hidden;
 }
-.animateTab a {
-    color: black;
-}
-.section {
-    z-index: -1;
-    color: white;
-    width: 100%;
-}
-.section.animatePanel {
-    z-index: 1;
-    color: black;
-}
-.section.animatePanel .bgCol {
+.container_tabs .section.animatePanel .contentPlace {
     width: 100%;
     height: 100%;
     left: 0 !important;
 }
-.SectionContainer {
+.container_tabs .animateTab .bgCol {
+    height: 100px;
+    -webkit-border-top-left-radius: 15px;
+    -webkit-border-top-right-radius: 15px;
+    -moz-border-top-left-radius: 15px;
+    -moz-border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.container_tabs .animateTab a {
+    color: black;
+}
+.container_tabs .section {
+    z-index: -1;
+    color: white;
+    width: 100%;
+}
+.container_tabs .section.animatePanel {
+    z-index: 1;
+    color: black;
+}
+.container_tabs .section.animatePanel .bgCol {
+    width: 100%;
+    height: 100%;
+    left: 0 !important;
+}
+.container_tabs .SectionContainer {
     background-color:#eeeeee; 
     min-height: 300px;
+    margin-bottom: 20px;
+}
+.container_tabs .section.animatePanel .content {
+    margin-left: 20px !important;
+}
+.container_tabs a.buttonForTabs {
+    position: absolute;
+    color: white;
+    background: #043f04;
+    bottom: 20px; right: 20px;
+    z-index: 5;
+    text-decoration: none;
+    padding: 5px 20px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    font-size: 30px;
 }
