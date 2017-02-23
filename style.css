@@ -57,33 +57,87 @@ table {
     position: relative;
 }
 .section {
-    display: none;
     position: absolute;
     overflow: hidden;
-    padding: 20px;
+    height: 300px;
+}
+.content {
+    margin: 20px;
 }
 .sectionTabContainer {
     overflow: hidden;
 }
 .sectionTab {
-    background: grey;
     width: 25%;
     height: 50px;
     position: relative;
     float: left;
-    padding: 10px 0;
+    background-color: #043f04;
 }
 .sectionTab a {
-    border: 1px solid darkgrey;
+    
+    border: 2px solid white;
     display: block;
-    width:100%;
+    color: white;
+    width: 100%;
     height: 100%;
-    color: black;
     text-decoration: none;
 }
+.sectionTab::first-of-type a {
+    border-left: none;
+    background-color: #dddddd;
+}
+.sectionTab::last-of-type a {
+    border-right: none;
+}
 .sectionTab a h2 {
-    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
 #section1 {
     display: block;
+}
+.bgCol {
+    top: 0;
+    height: 0;
+    position: absolute;
+    width: 100%;
+    transition: opacity 1s, height .5s, width .5s;
+    -webkit-transition: opacity 1s, height .5s, width .5s;
+    -moz-transition: opacity 1s, height .5s, width .5s;
+}
+.section .bgCol {
+    width: 25%;
+    z-index:-1;
+    transition: height .4s, width .4s, left .4s;
+    -webkit-transition: height .4s, width .4s, left .4s;
+    -moz-transition: height .4s, width .4s, left .4s;
+}
+.animateTab .bgCol {
+    height: 100px;
+}
+.animateTab a {
+    color: black;
+}
+.section {
+    z-index: -1;
+    color: white;
+    width: 100%;
+}
+.section.animatePanel {
+    z-index: 1;
+    color: black;
+}
+.section.animatePanel .bgCol {
+    width: 100%;
+    height: 100%;
+    left: 0 !important;
+}
+.SectionContainer {
+    background-color:#eeeeee; 
+    min-height: 300px;
 }
