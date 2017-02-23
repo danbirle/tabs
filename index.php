@@ -8,7 +8,7 @@
   crossorigin="anonymous"></script>
   <script src="script.js"></script>
   <link rel="stylesheet" href="style.css" type="text/css" />
-    <title>Page Title2</title>
+    <title>Page Title3</title>
 </head>
 
 <body>
